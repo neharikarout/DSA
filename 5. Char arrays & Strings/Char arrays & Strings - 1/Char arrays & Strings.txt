@@ -1,7 +1,24 @@
-initialization of char array
-size of char data type
-range of char data type
-Input of char array
- i. single character at a time
- ii. whole sequence of characters at a time 
-Null character
+input and output whole array in one go
+input index-wise
+NULL character in method of input whole array in one go
+overflow in char array
+cin stops reading at white spaces and cout stops printing at white spaces
+cin.getline
+length of char array
+some inbuilt functions in char arrays
+reverse a char array
+replace all spaces with @
+pallindrome
+convert to uppercase
+string and taking input
+difference between string and array
+inbuilt functions of strings
+implement compare 2 strings
+
+HOMEWORK
+NULL char is '0' or '\0'
+    '\0'
+getline
+strcmp
+how to insert chars in between char array using insert function
+convert to lowercase
