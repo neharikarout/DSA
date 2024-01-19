@@ -1,0 +1,7 @@
+initialization of char array
+size of char data type
+range of char data type
+Input of char array
+ i. single character at a time
+ ii. whole sequence of characters at a time 
+Null character
