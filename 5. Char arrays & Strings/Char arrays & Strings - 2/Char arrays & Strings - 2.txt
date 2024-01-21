@@ -1,0 +1,28 @@
+Remove All Adjacent Duplicates In String
+Remove All Occurrences of a Substring
+Minimum Time Difference
+Palindromic Substrings
+
+HOMEWORK
+implement s.find, s.erase
+print all substrings of a string
+
+242 valid anagram
+917 reverse only letters
+14 longest common prefix
+345 reverse vowels of string
+isomorphic strings
+reorganise strings
+group anagrams
+longest palindromic substring
+find index of first occ in a string
+string to integer
+string compression
+integer to roman
+zigzag conversion
+
+QUESTIONS WITHOUT SOLUTIONS
+179 largest number
+791 custom sort string
+953 verify alien dictionary
+524 longest word in dictionary through deleting
