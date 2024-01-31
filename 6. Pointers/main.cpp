@@ -17,15 +17,43 @@ int main()
 //     cout<<*p<<endl;// dereferencing p
 
 
-int a=5;
+// int a=5;
 
-int *p=&a;
+// int *p=&a;
 
-cout<<a<<endl;    //value of a
-cout<<&a<<endl;   //address of a
-cout<<*p<<endl;   //value of variable which it is pointing
-cout<<p<<endl;    //address of variable it is storing
-cout<<&p<<endl;   //address of p
+// cout<<a<<endl;    //value of a
+// cout<<&a<<endl;   //address of a
+// cout<<*p<<endl;   //value of variable which it is pointing
+// cout<<p<<endl;    //address of variable it is storing
+// cout<<&p<<endl;   //address of p
 
+
+// //Size of all pointers remain same a all pointer storing address
+
+// cout<<sizeof(p)<<endl; 
+
+// char ch='a';
+
+// char *q=&ch;
+
+// cout<<sizeof(q)<<endl;
+
+
+// double c=1.23;
+
+// double *r=&c;
+
+// cout<<sizeof(r)<<endl;
+
+//   BAD PRACTICE
+
+// int *ptr;
+// cout<<*ptr<<endl;
+
+//how to resolve : NULL POINTER
+
+// int *ptr=0;  
+// int *ptr=nullptr;
+// cout<<*ptr<<endl;
 
 }
