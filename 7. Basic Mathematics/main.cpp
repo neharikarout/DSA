@@ -118,8 +118,88 @@ int countPrime(int n)
     }
 
     return ans;
+}
 
 
-    
+// Segmented sieve
 
+
+
+// GCD/HCF
+
+// int gcd(int a, int b)
+// {
+//     if(a==0)
+//     {
+//         return b;
+//     }
+//     if(b==0){
+//         return a;
+//     }
+
+//     while(a>0 && b>0) 
+//     {
+//         if(a>b)
+//         a = a-b;
+//         else{
+//             b=b-a;
+//         }
+//     }
+//     return a==0 ? b : a;
+// }
+
+// // LCM - a*b/gcd(a,b)
+
+// int lcm(int a,int b)
+// {
+//     int ans = (a*b)/gcd(a,b);
+
+//     return ans;
+// }
+
+// int main()
+// {
+//     int a,b;
+//     cout<<" enter a"<<endl;
+//     cin>>a;
+//     cout<<"enter b"<<endl;
+//     cin>>b;
+
+//     int hcf = gcd(a,b);
+//     int largestCommonfactor = lcm(a,b);
+
+//     cout<<"HCF : "<<hcf<<" LCM : "<<largestCommonfactor<<endl;
+// }
+
+
+// Exponentiation
+
+int slowExponentiation(int a, int b)
+{
+    int ans = 1;
+    for(int i=0;i<b;i++)
+    {
+        ans*=a;
+    }
+    return ans;
+}
+
+int fastExponentiation(int a, int b)
+{
+    int ans = 1;
+    while(b>0)
+    {
+        if(b & 1) // odd
+        {
+            ans*=a;
+        }
+        a = a*a;
+        b>>=1; // b divided by 2
+    }
+    return ans;
+}
+int main()
+{
+    cout<<slowExponentiation(5,2);
+    cout<<fastExponentiation(5,2);
 }
