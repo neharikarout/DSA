@@ -38,7 +38,6 @@ int bubbleSort(int arr[],int n)
             break;
         }
 
-        cout<<"runs\n";
     }
 }
 
