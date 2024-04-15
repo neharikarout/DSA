@@ -46,6 +46,70 @@ void leftRotateBydOptimal(vector<int> &a,int n , int d)
     reverse(a.begin(), a.end());
 
 }
+
+
+
+// Move all zeros to end of the array
+// brute force
+void moveZeros(vector<int> &arr)
+{
+  vector<int> temp;
+  for(int i=0;i<arr.size();i++)
+  {
+    if(arr[i] != 0)
+    {
+        temp.push_back(arr[i]);
+    }
+  }
+
+  //copying temp in arr
+  for(int i=0;i<temp.size();i++)
+  {
+    arr[i] = temp[i];
+  }
+  
+  int nz = temp.size();
+
+  // fill remaining arr with zero
+  for(int i = nz;i<arr.size();i++)
+  {
+    arr[i] = 0;
+  }
+
+
+}
+
+
+void moveZerosOptimal(vector<int> &arr)
+{
+    int j = -1;
+    for(int i=0;i<arr.size();i++)
+    {
+        if(arr[i] == 0){
+            j = i;
+            break;
+        }
+    }
+
+    for(int i = j+1;i<arr.size();i++)
+    {
+        if(arr[i] != 0)
+        {
+            swap(arr[i],arr[j]);
+            j++;
+        }
+    }
+}
+
+
+int linearSearch(vector<int> arr,int target)
+{
+    for(int i = 0;i<arr.size();i++)
+    {
+        if(arr[i] == target) return i;
+    }
+    return -1;
+}
 int main()
 {
     vector<int> a;
@@ -62,7 +126,11 @@ int main()
 
     // leftRotateByOne(a);
     // leftRotatebyD(a,n,4);
-    leftRotateBydOptimal(a,n,4);
+    // leftRotateBydOptimal(a,n,4);
+    //moveZeros(a);
+
+    // int result = linearSearch(a,4);
+    // cout<<result;
 
     for(int i=0;i<n;i++)
     {
