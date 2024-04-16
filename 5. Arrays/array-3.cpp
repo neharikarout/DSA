@@ -17,9 +17,26 @@ int missingNumber(vector<int>& nums) {
 
 int maxConsecutiveOnes(vector<int> a)
 {
+    int maxi = 0; 
+    int count = 0;
+    for(int i = 0;i<a.size();i++)
+    {
+        if(a[i] == 1)
+        {
+            count++;
+            maxi = max(count,maxi);
+        }
+        else{
+            count = 0;
+        }
+    }
+
+    return maxi;
+
 }
 
- int singleNumber(vector<int>& nums) {
+
+  int singleNumber(vector<int>& nums) {
       int xorr = 0;
       for(int i= 0;i<nums.size();i++)
       {
@@ -28,8 +45,6 @@ int maxConsecutiveOnes(vector<int> a)
       return xorr;
     }
 
-
-    
 int main()
 {
     vector<int> a;
