@@ -40,6 +40,8 @@ string read(int n, vector<int> book, int target)
 }
 
 
+// sort 0,1,2 - optimal
+
 void sortArray(vector<int>& arr, int n)
 {
     int low = 0;
@@ -64,6 +66,59 @@ void sortArray(vector<int>& arr, int n)
     }
     
 }
+
+
+// better solution
+
+// int majorityElement(vector<int> v) {
+// 	map<int,int> mpp;
+// 	int n = v.size();
+// 	for(int i=0;i<n;i++)
+// 	{
+// 		mpp[v[i]]++;
+// 	}
+
+// 	for(auto it:mpp)
+// 	{
+// 		if(it.second > n/2) return it.first;
+// 	}
+	
+// 	return -1;
+// }
+
+
+// optimal solution
+
+int majorityElement(vector<int> v) {
+	int cnt = 0;
+	int el ;
+	for(int i =0;i<v.size();i++)
+	{
+		if(cnt == 0)
+		{
+			cnt = 1;
+			el = v[i];
+		}
+		else if(v[i] == el)
+		{
+			cnt++;
+		}
+		else cnt--;
+	}
+
+    int cnt1 = 0;
+	for(int i = 0; i<v.size(); i++)
+	{
+		if(v[i] == el) cnt1++;
+	}
+
+        if (cnt1 > (v.size() / 2)) {
+                return el;
+        }
+
+    return -1;
+	}
+
 
 int main()
 {
