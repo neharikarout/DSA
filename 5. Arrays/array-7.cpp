@@ -21,6 +21,32 @@ vector<int> superiorElements(vector<int>&a) {
     return ans;
 }
 
+
+int longestSuccessiveElements(vector<int>&a) {
+    int longest = 1;
+    int currCnt = 0;
+    int lastSmaller = INT_MIN;
+
+    sort(a.begin(),a.end());
+
+    for(int i = 0 ; i<a.size() ; i++)
+    {
+        if(a[i] -1 == lastSmaller){
+            currCnt+=1;
+            lastSmaller = a[i];
+        }
+
+        else if(lastSmaller != a[i])
+        {
+            currCnt = 1;
+            lastSmaller = a[i];
+       }
+       
+       longest = max(longest,currCnt);
+    }
+return longest;
+}
+
 int main()
 {
     return 0;
