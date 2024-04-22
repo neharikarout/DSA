@@ -81,6 +81,7 @@ int findAllSubarraysWithGivenSum(vector < int > & arr, int k) {
     }
 
 return cnt;
+
 }
 
 
