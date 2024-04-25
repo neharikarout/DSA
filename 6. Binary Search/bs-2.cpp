@@ -80,6 +80,65 @@ int lowerBoundstl(vector<int> arr, int n, int x) {
     return lb;
 
 }
+
+
+
+int floor(vector<int> &a, int n, int x)
+{
+    int l = 0;
+    int h = n -1;
+    int ans = -1;
+    int mid =( l + h)/2;
+
+    while(l<=h)
+    {
+        if(a[mid]<=x)
+        {
+            //might be ans so store and move right to find largest
+            ans = a[mid];
+            l = mid+1;
+        }
+        else
+        {
+            h = mid - 1;
+        }
+        mid = (l + h)/2;
+    }
+    return ans;
+}
+
+int ceil(vector<int> &a, int n, int x)
+{
+    int l = 0;
+    int h = n -1;
+    int ans = -1;
+    int mid = (l + h)/2;
+    while(l<=h)
+    {
+        if(a[mid]>=x)
+        {
+            //might be ans so store and move left to find smallest
+            ans = a[mid];
+            h = mid - 1;
+        }
+        else
+        {
+            l = mid+1;
+        }
+        mid = (l + h)/2;
+    }
+    return ans;
+}
+
+pair<int, int> getFloorAndCeil(vector<int> &a, int n, int x) {
+    int floorAns = floor(a, n, x);
+    int ceilAns = ceil(a, n, x);
+
+    return {floorAns, ceilAns};
+}
+
+
+
 int main()
 {
     return 0;
