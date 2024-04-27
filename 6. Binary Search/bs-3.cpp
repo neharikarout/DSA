@@ -162,6 +162,16 @@ int findMin(vector<int>& arr)
 	{
 		int mid =(low+high)/2;
 
+         //if search space is already sorted
+        if(arr[low] <= arr[high])
+        {
+            if(arr[low] < ans)
+            {
+                ans = arr[low];
+            }
+            break;
+        }
+
 		if(arr[mid]>=arr[low]) //sorted part
 		{
 			ans = min(arr[low],ans);
@@ -218,6 +228,50 @@ bool searchInARotatedSortedArrayII(vector<int>&arr, int k) {
     return false;
 }
 
+
+// find how many times array is rotated
+
+int findKRotation(vector<int> &arr){
+    int low = 0;
+    int high = arr.size() - 1;
+    int ans = INT_MAX;
+    int index = -1 ;
+
+    while(low<=high)
+    {
+        int mid = (low + high)/2;
+        //if search space is already sorted
+        if(arr[low] <= arr[high])
+        {
+            if(arr[low] < ans)
+            {
+                index = low;
+                ans = arr[low];
+            }
+            break;
+        }
+        if(arr[low] <= arr[mid]) // sorted part i.e left  eg: 4560123  
+        {
+            // may or may not be answer
+            if(arr[low] < ans)
+            {
+                index = low; // manual function so that we can store ans
+                ans = arr[low];
+            }
+            low = mid + 1;
+        }
+
+        else{ // right part i.e unsorted part
+                high = mid-1 ;
+            if(arr[mid] < ans)
+            {
+                index = mid;
+                ans = arr[mid];
+            }
+        }
+    }
+      return index;
+}
 
 int main()
 {
