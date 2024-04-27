@@ -273,6 +273,45 @@ int findKRotation(vector<int> &arr){
       return index;
 }
 
+
+
+// single element in a sorted array
+int singleNonDuplicate(vector<int>& arr)
+{
+	int n = arr.size();
+
+	if(n == 1) return arr[0];
+
+	if(arr[0] != arr[1])  return arr[0];
+
+	if(arr[n-1] != arr[n-2]) return arr[n-1];
+
+	// rest
+	int low = 1 , high = n-2;
+	
+	while(low<=high)
+	{
+		int mid = (low + high)/2;
+		
+		if(arr[mid] != arr[mid + 1]  && arr[mid] != arr[mid-1]) 
+		return arr[mid];  // actual return statement
+
+		//elimination
+		// (odd , even) i.e left half and ans is on right
+		if((mid % 2 == 1 && arr[mid-1] == arr[mid] ) 
+		||  (mid%2 == 0 && arr[mid + 1] == arr[mid] ))
+		{
+			low = mid + 1;
+		}
+
+		else // (even,odd) i.e right half and ans is on left
+		{
+			high = mid -1;
+		}
+	}
+
+	return -1;  // dummy statement as function has int type
+}
 int main()
 {
     return 0;
