@@ -21,6 +21,22 @@ class Node
 
 };
 
+Node* convertArr2LL(vector<int> &arr)
+{
+    Node* head = new Node(arr[0]);
+    Node* mover = head;
+    for(int i=1;i<arr.size(); i++)
+    {
+        Node* temp = new Node(arr[i]);
+        mover->next = temp; // connect current node with next new temp node
+        mover = temp;// move mover to the temp
+        // as mover next has temp address we can write like this too
+        // mover = mover->next;
+    }
+    return head;
+}
+
+
 int main()
 {
     vector<int> arr = {2,5,8,7};
@@ -30,11 +46,23 @@ int main()
     // Node y =  Node(arr[0], nullptr);
     // cout<<y.data << " " << y.next; // object
 
-    Node* y = new Node(arr[0], nullptr);
-    cout<<y->data <<" " << y->next;
+    // Node* y = new Node(arr[0], nullptr);
+    // cout<<y->data <<" " << y->next;
 
-    Node* n = new Node(arr[0]); // will call constructor with one parameter
+    // Node* n = new Node(arr[0]); // will call constructor with one parameter
 
+
+    Node* head = convertArr2LL(arr);
+    // cout<<head->data;
+
+
+    Node* temp = head;
+    while(temp)
+    {
+        cout<<temp->data<<" ";
+        temp = temp->next;
+    }
+    
 
 
 }
