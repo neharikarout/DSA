@@ -52,6 +52,11 @@ Node* deleteHead(Node* head)
 
 Node* deleteTail(Node* head)
 {
+    if(head == NULL || head->next == NULL) 
+    {
+        head = NULL;
+    return NULL;
+    }
     Node* tail = head;
     while(tail->next != NULL)
     {
