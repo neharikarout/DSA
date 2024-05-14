@@ -117,6 +117,26 @@ Node* deleteKthEl(Node* head , int k)
     return head;
 }
 
+void deleteNode(Node* temp)
+{
+    Node* prev = temp->back;
+    Node* front = temp->next;
+
+    if(front == NULL)
+    {
+        prev->next = nullptr;
+        temp->back = prev;
+        free(temp);
+    }
+
+    prev->next = front;
+    front->back = prev;
+
+
+    temp->next = temp->back = nullptr;
+    free(temp);
+}
+
 int main()
 {
     vector<int> arr = {12,5,8,7};
@@ -128,7 +148,9 @@ int main()
     // head = deleteTail(head);
     // print(head);
 
-    head = deleteKthEl(head , 1);
-    print(head);
+    // head = deleteKthEl(head , 1);
+    // print(head);
 
+    deleteNode(head->next->next);
+    print(head);
 }
