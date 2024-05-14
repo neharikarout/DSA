@@ -137,6 +137,7 @@ void deleteNode(Node* temp)
     free(temp);
 }
 
+
 int main()
 {
     vector<int> arr = {12,5,8,7};
@@ -151,6 +152,6 @@ int main()
     // head = deleteKthEl(head , 1);
     // print(head);
 
-    deleteNode(head->next->next);
-    print(head);
+    // deleteNode(head->next->next);
+    // print(head);
 }
