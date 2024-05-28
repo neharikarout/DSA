@@ -131,7 +131,7 @@ Node *addTwoNumbers(Node *num1, Node *num2)
         if(t2) t2 = t2->next;
 
         if (carry) {
-          newNode = new Node(carry);
+          Node* newNode = new Node(carry);
           curr->next = newNode;
         }
     }
