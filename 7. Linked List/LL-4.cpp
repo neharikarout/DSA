@@ -103,6 +103,42 @@ Node* ReverseBySwappingLinks(Node* head)
     // new head
     return last->prev;
 }
+
+
+// Add two numbers in LL
+
+Node *addTwoNumbers(Node *num1, Node *num2)
+{
+     Node* t1 = num1;
+    Node* t2 = num2;
+    Node* dummyNode = new Node(-1);
+    Node* curr = dummyNode;
+    int carry = 0;
+
+    while(t1!=NULL || t2!=NULL)
+    {
+        int sum = carry;
+        if(t1) sum += t1->data;
+        if(t2) sum +=t2->data;
+
+        Node* newNode = new Node(sum%10);
+        carry = sum/10;
+
+        curr->next = newNode;
+        curr = curr->next;
+
+        if(t1) t1 = t1->next;
+        if(t2) t2 = t2->next;
+
+        if (carry) {
+          newNode = new Node(carry);
+          curr->next = newNode;
+        }
+    }
+
+        return dummyNode->next; // head of new LL
+}
+
 int main()
 {
     vector<int> arr = {4,3,2,1};
