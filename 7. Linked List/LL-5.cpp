@@ -106,6 +106,64 @@ delete zeroHead,oneHead,twoHead;
 return newHead;
 
 
+// find middle element
+//  ListNode* middleNode(ListNode* head) {
+    // naive solution
+
+        // ListNode* temp = head; int cnt = 0;
+        // while(temp != NULL)
+        // {
+        //     cnt++;
+        //     temp = temp->next;
+        // }
+        // int middle = cnt/2 ;
+        //     temp = head;
+        //     while(middle)
+        //     {
+        //         middle--;
+        //         temp = temp->next;
+        //     }
+        //     return temp; 
+
+
+        // optimal = tortoise hare method
+        // Node* fast = head ; 
+        // Node* slow = head;
+        
+        // while(fast != NULL && fast->next != NULL){
+        //     slow = slow->next;
+        //     fast = fast->next->next;
+        // }
+        // return slow;
+    // }
+
+
+
+// remove nth element from the end
+
+    //  ListNode* removeNthFromEnd(ListNode* head, int n) {
+        
+    //     ListNode* fast = head;
+    //     ListNode* slow = head;
+    //     for(int i = 0 ; i < n ; i++)
+    //     {
+    //         fast = fast->next;
+    //     }
+    //     if(fast == NULL) {
+    //         ListNode* newHead = head->next;
+    //         delete head;
+    //         return newHead;
+    //     }
+    //     while(fast->next != NULL){
+    //         fast = fast->next;
+    //         slow = slow->next;
+    //     }
+    //     ListNode* delNode = slow->next;
+    //     slow->next = slow->next->next;
+    //     delete delNode;
+
+    //     return head;
+    // }
 
 
 
@@ -127,4 +185,4 @@ return newHead;
 
 
 
-}
+
