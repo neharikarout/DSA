@@ -166,6 +166,39 @@ return newHead;
     // }
 
 
+    // reverse a linked list
+//     Node* reverseLinkedList(Node *head)
+// {
+//     if (head == NULL || head->next == NULL) {
+//         return head;
+//     }
+    
+//         Node* temp = head ; 
+//         Node* prev = NULL;
+//         while(temp != NULL){
+//             Node* front = temp->next;
+//             temp->next = prev;
+//             prev = temp ;
+//             temp = front;
+//         }
+
+//         return prev;
+
+
+ // recursive
+        // if(head == NULL || head->next == NULL ){
+        //     return head;
+        // }
+        // ListNode* newHead = reverseList(head->next);
+        // ListNode* front = head->next;
+        // front->next = head;
+        // head->next = NULL;
+
+        // return newHead;
+        
+// }
+
+
 
 
 
