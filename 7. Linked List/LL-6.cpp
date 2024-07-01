@@ -99,3 +99,73 @@ int lengthOfLoop(Node *head) {
 
     return head;   
     }  
+
+
+
+//                FIND INTERSECTION POINT
+// BETTER SOLUTION
+int lengthLL(Node* head){
+  int cnt = 0;
+  Node* temp = head;
+  while(temp != NULL){
+      cnt++;
+      temp = temp->next;
+  }
+  return cnt;
+}
+
+Node* findIntersection(Node* firstHead ,Node* secondHead, int N1,int N2){
+    int d = N1-N2;
+      Node* temp1 = firstHead;
+      while(d){
+          d--;
+          temp1=temp1->next;
+      }
+
+      Node* temp2 = secondHead;
+      while(temp1 != NULL && temp2 != NULL){
+          
+          if(temp1 == temp2){
+              return temp1;
+          }
+          temp1=temp1->next;
+          temp2=temp2->next;
+      }
+      return NULL;
+}
+
+Node* findIntersection(Node *firstHead, Node *secondHead)
+{
+    int N1 = lengthLL(firstHead);
+    int N2 = lengthLL(secondHead);
+
+   if(N1>N2) {
+       return findIntersection(firstHead,secondHead, N1,N2);
+
+   }
+   else{
+       return findIntersection(secondHead,firstHead,N2,N1);
+   }
+
+return NULL;
+}
+
+
+
+// OPTIMAL
+Node *getIntersectionNode(Node *headA, Node *headB) {
+if(headA == NULL || headB == NULL) return NULL;
+Node* temp1 = headA;
+Node* temp2 = headB;
+while(temp1 != temp2){
+    temp1 = temp1->next;
+    temp2 = temp2->next;
+
+    if(temp1 == temp2) return temp1;
+
+    if(temp1 == NULL) temp1 = headB;
+    if(temp2 == NULL) temp2 = headA;
+}
+return temp1; // if head is the intersection point
+
+}
