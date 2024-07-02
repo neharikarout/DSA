@@ -90,3 +90,28 @@ Node* findTail(Node* head)
 
 //     return ans;
 // }
+
+
+
+//        REMOVE DUPLICATES FROM A SORTED DLL
+
+Node * removeDuplicates(Node *head)
+{
+    // Write your code here
+    Node* temp = head;
+    while(temp != NULL && temp->next != NULL){
+        Node* nextNode = temp->next;
+
+        while(nextNode != NULL && nextNode->data == temp->data)
+        {
+            nextNode = nextNode->next;
+        }
+
+        temp->next = nextNode;
+        if(nextNode) nextNode->prev = temp;
+
+        temp = temp->next;
+    }
+
+    return head;
+}
