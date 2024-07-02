@@ -104,7 +104,9 @@ Node * removeDuplicates(Node *head)
 
         while(nextNode != NULL && nextNode->data == temp->data)
         {
+            Node* duplicate = nextNode;
             nextNode = nextNode->next;
+            free(duplicate);
         }
 
         temp->next = nextNode;
