@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include<strings.h>
 using namespace std;
 
 string removeOuterParentheses(string s) {
@@ -78,9 +79,18 @@ return ans;
 int main(){
 
     char arr[5] = {'a','p','p','l','e'};
-    cout<<arr;
+    arr[2] = '\0';
+    cout<<arr<<endl;
+    char name[100] ;
+    cout<<"Enter your name:"<<endl;
+    // cin>>name;
+    cin.getline(name,50);
+    name[2] = '\0';
+    cout<<name<<endl;
+   
 
     string s = "Neharika";
+    s[2] = '\0';
     cout<<s;
     
 }
